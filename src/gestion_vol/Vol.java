@@ -1,14 +1,14 @@
 package gestion_vol;
 
-import java.time.ZoneDateTime;
+
 
 public class Vol {
 	private int numero;
-	private ZoneDateTime depart;
-	private ZoneDateTime arrive;
-	private ZoneDateTime duree;
+	private int depart;
+	private int arrive;
+	private int duree;
 
-	public Vol(int n, ZoneDateTime d, ZoneDateTime a){
+	public Vol(int n, int d, int a){
 		this.numero=n;
 		this.depart=d;
 		this.arrive=a;

@@ -1,10 +1,17 @@
 # TP_Vol
 
 ## A faire
-- Implémentation des class (en cours)
+- [x] Implémentation des classe (constructeur)
+- [x] Implémentation de la durée 
+- [] Relier la compagnie au vol 
+- [] Relier l'aéroport au vol
+- [] Relier la ville aux aéroports
+- [] Gérer les escales
 
-## Problème
+
+## Problème rencontré
 ### Manipuler des dates
+- Pour le moment la duree est une variable de type long 
 
 
 ## Compiler

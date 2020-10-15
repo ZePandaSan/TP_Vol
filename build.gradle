@@ -2,7 +2,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-mainClassName='com.uca.Start'
+mainClassName='Start'
 
 repositories {
     mavenCentral()
@@ -23,7 +23,7 @@ jar {
  manifest {
         attributes 'Implementation-Title': 'Gradle Quickstart',
                    'Implementation-Version': '1.0.0',
-                   'Main-Class': 'com.uca.Start'
+                   'Main-Class': 'Start'
     }
 }
 

@@ -1,7 +1,10 @@
 # TP_Vol
 
-## To do 
-### Trouver une solution pour pouvoir soustraire des dates
+## To do
+- Implémentation des class (en cours)
+
+## Problem
+### Trouver une solution pour manipuler des dates
 - Utilisation du type date puis création d'un geter pour récupérer la durée
 
 ## compiler

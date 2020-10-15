@@ -1,5 +1,8 @@
 # TP_Vol
 
-Affiche Hello world pour le moment
+## To do 
+Trouver une solution pour pouvoir soustraire des dates 
+
+## compiler
 
 Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run` 

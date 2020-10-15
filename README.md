@@ -11,7 +11,7 @@
 
 ## Problème rencontré
 ### Manipuler des dates
-- Pour le moment la duree est une variable de type long 
+- Utisisation du type `ZonedDateTime`
 
 
 ## Compiler

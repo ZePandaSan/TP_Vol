@@ -4,7 +4,7 @@
 - Implémentation des class (en cours)
 
 ## Problème
-### Trouver une solution pour manipuler des dates
+### Manipuler des dates
 - Utilisation du type date puis création d'un geter pour récupérer la durée
 
 ## Compiler

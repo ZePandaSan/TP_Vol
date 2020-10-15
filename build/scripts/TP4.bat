@@ -82,7 +82,7 @@ set CMD_LINE_ARGS=%*
 set CLASSPATH=%APP_HOME%\lib\TP4.jar;%APP_HOME%\lib\hamcrest-2.2.jar;%APP_HOME%\lib\junit-jupiter-5.7.0.jar;%APP_HOME%\lib\junit-jupiter-params-5.7.0.jar;%APP_HOME%\lib\junit-jupiter-engine-5.7.0.jar;%APP_HOME%\lib\junit-jupiter-api-5.7.0.jar;%APP_HOME%\lib\junit-platform-engine-1.7.0.jar;%APP_HOME%\lib\junit-platform-commons-1.7.0.jar;%APP_HOME%\lib\apiguardian-api-1.1.0.jar;%APP_HOME%\lib\opentest4j-1.2.0.jar
 
 @rem Execute TP4
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %T_P4_OPTS%  -classpath "%CLASSPATH%" com.uca.Start %CMD_LINE_ARGS%
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %T_P4_OPTS%  -classpath "%CLASSPATH%" Start %CMD_LINE_ARGS%
 
 :end
 @rem End local scope for the variables with windows NT shell

@@ -1,8 +1,8 @@
 # TP_Vol
 
 ## A faire
-- [x] Implémentation des classe (constructeur)
-- [x] Implémentation de la durée 
+- [x] Implémentation des class et constructeurs
+- [ ] Implémentation de la durée (en cours)
 - [ ] Relier la compagnie au vol 
 - [ ] Relier l'aéroport au vol
 - [ ] Relier la ville aux aéroports

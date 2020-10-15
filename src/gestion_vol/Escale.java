@@ -1,11 +1,12 @@
 package gestion_vol;
 
+import java.sql.Date;
 
 public class Escale {
-	private Datetime dateDepart;
-	private Datetime dateArrivee;
+	private Date dateDepart;
+	private Date dateArrivee;
 
-	public Escale(Datetime dep, Datetime arr){
+	public Escale(Date dep, Date arr){
 		this.dateDepart = dep;
 		this.dateArrivee = arr;
 	}

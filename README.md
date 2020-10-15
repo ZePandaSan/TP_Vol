@@ -5,7 +5,7 @@
 
 ## Problème
 ### Manipuler des dates
-- Utilisation du type date puis création d'un geter pour récupérer la durée
+
 
 ## Compiler
 

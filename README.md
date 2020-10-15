@@ -1,7 +1,8 @@
 # TP_Vol
 
 ## To do 
-Trouver une solution pour pouvoir soustraire des dates 
+### Trouver une solution pour pouvoir soustraire des dates
+- Utilisation du type date puis création d'un geter pour récupérer la durée
 
 ## compiler
 

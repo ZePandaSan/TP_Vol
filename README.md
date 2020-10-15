@@ -3,10 +3,10 @@
 ## A faire
 - [x] Implémentation des classe (constructeur)
 - [x] Implémentation de la durée 
-- [] Relier la compagnie au vol 
-- [] Relier l'aéroport au vol
-- [] Relier la ville aux aéroports
-- [] Gérer les escales
+- [ ] Relier la compagnie au vol 
+- [ ] Relier l'aéroport au vol
+- [ ] Relier la ville aux aéroports
+- [ ] Gérer les escales
 
 
 ## Problème rencontré

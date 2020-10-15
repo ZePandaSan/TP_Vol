@@ -2,17 +2,18 @@ package gestion_vol;
 
 import java.sql.Date;
 
+
 public class Vol {
 	private int numero;
 	private Date depart;
 	private Date arrive;
-	private Date duree;
+	private long duree;
 
-	public Vol(int n, Date d, Date a){
+	public Vol(int n, Date dep, Date arr){
 		this.numero=n;
-		this.depart=d;
-		this.arrive=a;
-		//this.duree=a-d;
+		this.depart=dep;
+		this.arrive=arr;
+		this.duree=arr.getTime()-dep.getTime();
 	}
 
 	private void ouvrir(){

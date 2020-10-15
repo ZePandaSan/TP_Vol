@@ -2,8 +2,8 @@
 
 ## A faire
 - [x] Implémentation des class et constructeurs
-- [ ] Implémentation de la durée (en cours)
-- [ ] Gérer les exceptions de dates
+- [x] Implémentation de la durée
+- [ ] Gérer les exceptions de dates (en cours)
 - [ ] Relier la compagnie au vol 
 - [ ] Relier l'aéroport au vol
 - [ ] Relier la ville aux aéroports

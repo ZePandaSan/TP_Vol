@@ -1,6 +1,5 @@
 package gestion_vol;
 
-import java.time.DayOfWeek;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 
@@ -20,9 +19,9 @@ public class Vol {
 		if (this.depart.equals(this.arrivee)){
 			throw new IllegalArgumentException("Arrival cannot be at the same time as departure");
 		}
-		if (this.depart.minus(2,ChronoUnit.DAYS).isSupported(ChronoUnit.DAYS) && this.depart.getHour()<this.arrivee.getHour()+1){
+		/*if (this.depart.minus(2,ChronoUnit.DAYS).isSupported(ChronoUnit.DAYS) && this.depart.getHour()<this.arrivee.getHour()+1){
 			throw new IllegalArgumentException("Flights over 23 hours are not supported");
-		}
+		}*/
 	}
 
 	private void ouvrir(){

@@ -5,20 +5,31 @@
 Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run` 
 
 ## A faire
+
 - [x] Implémentation des class et constructeurs
+
 - [x] Implémentation de la durée
-- [X] Gérer les exceptions de dates 
+
+- [X] Gérer les exceptions de dates
+
 - [ ] ID de vol unique
+
 - [ ] Relier la compagnie au vol (en cours)
+
 - [ ] Relier l'aéroport au vol
+
 - [ ] Relier la ville aux aéroports
+
 - [ ] Gérer les escales
 
-
 ## Problème rencontré
+
 ### Manipuler des dates
+
 - Utisisation du type `ZonedDateTime`
+
 ### Durée entre deux horaires avec des jours différent
+
 ```java
 public String get_Duree(){
 		int duree_heure=this.arrivee.getHour()-this.depart.getHour();
@@ -41,7 +52,9 @@ public String get_Duree(){
 		return duree_heure+":"+duree_minute;
 }
 ```
+
 ### Gestion des exceptions sur la date 
+
 ```java
 if (this.arrivee.isBefore(this.depart)){
 			throw new IllegalArgumentException("Arrival cannot be prior to departure");
@@ -54,5 +67,6 @@ if (this.arrivee.isBefore(this.depart)){
 		}
 }
 ```
+
 Nous n'avons pas réeussi à implémenter des durée supérieur à 22h59.
 

@@ -1,9 +1,14 @@
 # TP_Vol
 
+## Compiler
+
+Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run` 
+
 ## A faire
 - [x] Implémentation des class et constructeurs
 - [x] Implémentation de la durée
 - [X] Gérer les exceptions de dates 
+- [ ] Numéro de vol unique
 - [ ] Relier la compagnie au vol (en cours)
 - [ ] Relier l'aéroport au vol
 - [ ] Relier la ville aux aéroports
@@ -51,6 +56,3 @@ if (this.arrivee.isBefore(this.depart)){
 ```
 Nous n'avons pas réeussi à implémenter des durée supérieur à 22h59.
 
-## Compiler
-
-Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run` 

@@ -8,7 +8,7 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 - [x] Implémentation des class et constructeurs
 - [x] Implémentation de la durée
 - [X] Gérer les exceptions de dates 
-- [ ] Numéro de vol unique
+- [ ] ID de vol unique
 - [ ] Relier la compagnie au vol (en cours)
 - [ ] Relier l'aéroport au vol
 - [ ] Relier la ville aux aéroports

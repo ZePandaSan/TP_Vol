@@ -8,9 +8,9 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 
 - [x] Implémentation des class et constructeurs
 
-- [ ] Gérer les exceptions de dates (en cours)
+- [x] Gérer les exceptions de dates 
 
-- [ ] Implémentation de la durée 
+- [x] Implémentation de la durée 
 
 - [ ] ID de vol unique
 
@@ -22,7 +22,7 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 
 - [ ] Gérer les escales
 
-## Problème rencontré
+## Problèmes rencontrés
 
 ### Manipuler des dates
 
@@ -41,18 +41,21 @@ if (this.arrivee.isBefore(this.depart)){
 }
 if (this.depart.equals(this.arrivee)){
 	throw new IllegalArgumentException("Arrival cannot be at the same time as departure");
-	}
+}
 ```
 
 ### Implémentation de la durée
 
-- [X] Durée simple (même jour, heure de départ < heure d'arrivée, minute de départ < )
+Utilisation du type `duration` qui prend en argument les deux ZonedDateTime. 
+Duration va renvoyer des caractères inutiles qui dont supprimer grâce à `replaceAll`.
 
 ```java
-public String get_Duree(){
-		int duree_heure=this.arrivee.getHour()-this.depart.getHour();
-		int duree_minute=this.arrivee.getMinute()-this.depart.getMinute();
-		return duree_heure+":"+duree_minute;
+public String get_Duree(){ 
+	String duree=Duration.between(this.depart, this.arrivee).toString();
+	duree=(duree == null) ? null : duree.replaceAll("PT", "");
+	duree=(duree == null) ? null : duree.replaceAll("H", ":");
+	duree = (duree == null) ? null : duree.replaceAll("M", "");
+	return duree;
 }
 ```
 

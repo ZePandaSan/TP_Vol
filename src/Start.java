@@ -17,7 +17,6 @@ public class Start{
 		LocalDateTime arr = LocalDateTime.of(2020, Month.OCTOBER, 21, 00, 30);
 		ZonedDateTime arrive = arr.atZone(paris);
 		Vol a = new Vol(depart, arrive);
-		//a.set_ID();
 		//-----------------------------------------------------------------------------------
 		LocalDateTime dep2 = LocalDateTime.of(2020, Month.OCTOBER, 21, 16, 00);
 		ZonedDateTime depart2 = dep2.atZone(paris);

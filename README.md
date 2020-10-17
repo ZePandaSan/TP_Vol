@@ -7,6 +7,7 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 ## Avancement
 
 ![avancement](UML_avancement.png)
+
 ## A faire
 
 - [x] Implémentation des class et constructeurs
@@ -72,4 +73,6 @@ Vol b = new Vol(depart2, arrive2);
 b.mise_a_jour();
 ```
 
+### Agrégation compagnie - vol 
 
+Nous avons décider d'implémenter une `ArrayList`

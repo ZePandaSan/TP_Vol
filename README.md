@@ -12,7 +12,7 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 
 - [x] Implémentation de la durée 
 
-- [ ] ID de vol unique
+- [x] ID de vol unique
 
 - [ ] Relier la compagnie au vol 
 
@@ -57,6 +57,16 @@ public String get_Duree(){
 	duree = (duree == null) ? null : duree.replaceAll("M", "");
 	return duree;
 }
+```
+
+### Vol unique 
+
+Utilisation d'un seter qui incrémente un numéro de vol. 
+
+Problème : devoir faire ` nomVol.mise_a_jour ` à chaque nouveau vol
+```java
+Vol b = new Vol(depart2, arrive2);
+b.mise_a_jour();
 ```
 
 

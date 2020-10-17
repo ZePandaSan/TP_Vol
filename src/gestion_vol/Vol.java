@@ -2,15 +2,15 @@ package gestion_vol;
 
 import java.time.Duration;
 import java.time.ZonedDateTime;
+//import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class Vol {
-	private String id;
+	private int id=1;
 	private ZonedDateTime depart;
 	private ZonedDateTime arrivee;
 
-	public Vol(String id, ZonedDateTime dep, ZonedDateTime arr){
-		this.id=id;
+	public Vol(ZonedDateTime dep, ZonedDateTime arr){
 		this.depart=dep;
 		this.arrivee=arr;
 		if (this.arrivee.isBefore(this.depart)){
@@ -37,8 +37,12 @@ public class Vol {
 		return duree;
 	}
 
-	public String get_ID(){
+	public int get_ID(){
 		return this.id;
+	}
+
+	public void mise_a_jour(){
+		this.id++;
 	}
 
 

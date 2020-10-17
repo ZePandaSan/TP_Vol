@@ -14,7 +14,7 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 
 - [x] ID de vol unique
 
-- [ ] Relier la compagnie au vol 
+- [ ] Relier la compagnie au vol (en cours)
 
 - [ ] Relier l'aéroport au vol
 

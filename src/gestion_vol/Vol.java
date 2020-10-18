@@ -60,15 +60,18 @@ public class Vol {
 		if (this.depart.equals(this.arrivee)){
 			throw new IllegalArgumentException("The place of arrival cannot be the same as the place of departure");
 		}
+		if(!this.depart.dessert.contains(this.arrivee.get_ville())){
+			throw new IllegalArgumentException("This airport does not serve the city entrance");
+		}
 	}
 
 	public void print_all(){
 		DateTimeFormatter format = DateTimeFormatter.ofPattern("HH:mm, dd MMM yyyy");
 		System.out.println("Flight id : " + this.id_compagnie +" "+ this.numero);
 		//System.out.println("Time zone : " + paris);
-		System.out.println("Departure : " + format.format(date_depart) + " " + date_depart.getZone()+" a "+this.depart.get_nom()+"("+this.depart.get_ville()+")");
+		System.out.println("Departure : " + format.format(date_depart) + " " + date_depart.getZone()+" a "+this.depart.get_nom()+"("+this.depart.get_nom_ville()+")");
 		System.out.println("Arrival : " + format.format(date_arrivee) + " " + date_arrivee.getZone() + " a "
-				+ this.arrivee.get_nom() + "(" + this.arrivee.get_ville()+")");
+				+ this.arrivee.get_nom() + "(" + this.arrivee.get_nom_ville()+")");
 		System.out.println("Duration : " + this.get_Duree());
 	}
 

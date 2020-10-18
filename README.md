@@ -10,7 +10,7 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 
 ## A faire
 
-- [x] Implémentation des class et constructeurs
+- [x] Implémentation les class et leurs constructeurs
 
 - [x] Gérer les exceptions de dates 
 
@@ -22,9 +22,9 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 
 - [X] Relier l'aéroport au vol
 
-- [ ] Relier la ville aux aéroports (en cours)
+- [x] Relier la ville aux aéroports 
 
-- [ ] Gérer les escales 
+- [ ] Gérer les escales (en cours)
 
 - [ ] Package rservation 
 
@@ -47,6 +47,10 @@ Les exceptions sont gérer dans la méthode verif().
 - [X] Date d'arrivée antérieure à celle de départ
 - [X] Date d'arrivée égal à celle d'arrivée
 - [x] Aeroport de départ est le même que celui d'arrivée
+- [x] L'aeroport ne desert pas la ville entrée
+
+Fonctionne mal car contenu d' `ArrayList ` : 
+`[gestion_vol.Ville@6e8dacdf, gestion_vol.Ville@7a79be86]`
 
 ```java
 public void verif(){
@@ -59,6 +63,9 @@ public void verif(){
 	if (this.depart.equals(this.arrivee)){
 		throw new IllegalArgumentException("The place of arrival cannot be the same as the place of departure");
 	}
+	if(this.depart.dessert.contains(this.arrivee.get_ville())){
+		throw new IllegalArgumentException("This airport does not serve the city entrance");
+		}
 	}
 ```
 

@@ -6,4 +6,8 @@ public class Ville {
 	public Ville(String n){
 		this.nom = n;
 	}
+
+	public String get_ville(){
+		return this.nom;
+	}
 }

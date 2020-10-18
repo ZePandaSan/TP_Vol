@@ -16,9 +16,9 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 
 - [x] Implémentation de la durée 
 
-- [x] ID de vol unique
+- [ ] ID de vol unique (en cours)
 
-- [ ] Relier la compagnie au vol (en cours)
+- [x] Relier la compagnie au vol 
 
 - [ ] Relier l'aéroport au vol
 
@@ -75,4 +75,12 @@ b.mise_a_jour();
 
 ### Agrégation compagnie - vol 
 
-Nous avons décider d'implémenter une `ArrayList`
+Nous avons décider d'implémenter une `ArrayList`.
+La compagnie aura donc une liste de vol à sa disposition 
+```java 
+public class Compagnie{
+	public String nom;
+	private List<Vol> vols = new ArrayList<Vol>();
+```
+
+La compagnie va ensuite créer le vol.

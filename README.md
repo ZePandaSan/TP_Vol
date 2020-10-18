@@ -24,7 +24,13 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 
 - [ ] Relier la ville aux aéroports (en cours)
 
-- [ ] Gérer les escales
+- [ ] Gérer les escales 
+
+- [ ] Package rservation 
+
+- [ ] Relier Vol à Réservation
+
+- [ ] Implémenter test unitaire
 
 ## Problèmes rencontrés
 

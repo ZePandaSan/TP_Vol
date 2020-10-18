@@ -40,7 +40,7 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 
 
 
-### Gestion des exceptions sur la date 
+### Gestion des exceptions
 
 Les exceptions sont gérer dans la méthode verif().
 
@@ -48,9 +48,6 @@ Les exceptions sont gérer dans la méthode verif().
 - [X] Date d'arrivée égal à celle d'arrivée
 - [x] Aeroport de départ est le même que celui d'arrivée
 - [x] L'aeroport ne desert pas la ville entrée
-
-Fonctionne mal car contenu d' `ArrayList ` : 
-`[gestion_vol.Ville@6e8dacdf, gestion_vol.Ville@7a79be86]`
 
 ```java
 public void verif(){
@@ -117,3 +114,18 @@ public void creer_vol(Aeroport aeroport1, ZonedDateTime date1, Aeroport aeroport
 		v.print_all();
 	}
 ``` 
+
+### Association Aéroport - Ville 
+L'aéroport va s'ajouter tous seule dans la listes des aéroports d'une ville pour garentir la doublle navigabilité : 
+```java
+public class Aeroport {
+    private String nom;
+    private Ville ville;
+    public List<Ville> dessert = new ArrayList<Ville>();
+
+    public Aeroport(String nom, Ville ville){
+        this.nom = nom;
+        this.ville=ville;
+        this.ville.add_aeroport(this);
+	}
+```

@@ -16,11 +16,11 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 
 - [x] Implémentation de la durée 
 
-- [ ] ID de vol unique (en cours)
+- [x] ID de vol unique (en cours)
 
 - [x] Relier la compagnie au vol 
 
-- [ ] Relier l'aéroport au vol
+- [X] Relier l'aéroport au vol
 
 - [ ] Relier la ville aux aéroports
 
@@ -36,16 +36,24 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 
 ### Gestion des exceptions sur la date 
 
+Les exceptions sont gérer dans la méthode verif().
+
 - [X] Date d'arrivée antérieure à celle de départ
 - [X] Date d'arrivée égal à celle d'arrivée
+- [x] Aeroport de départ est le même que celui d'arrivée
 
 ```java
-if (this.arrivee.isBefore(this.depart)){
-	throw new IllegalArgumentException("Arrival cannot be prior to departure");
-}
-if (this.depart.equals(this.arrivee)){
-	throw new IllegalArgumentException("Arrival cannot be at the same time as departure");
-}
+public void verif(){
+	if (this.date_arrivee.isBefore(this.date_depart)){
+		throw new IllegalArgumentException("Arrival cannot be prior to departure");
+	}
+	if (this.date_depart.equals(this.date_arrivee)){
+		throw new IllegalArgumentException("Arrival cannot be at the same time as departure");
+	}
+	if (this.depart.equals(this.arrivee)){
+		throw new IllegalArgumentException("The place of arrival cannot be the same as the place of departure");
+	}
+	}
 ```
 
 ### Implémentation de la durée
@@ -65,12 +73,12 @@ public String get_Duree(){
 
 ### Vol unique 
 
-Utilisation d'un seter qui incrémente un numéro de vol. 
+Utilisation d'un seter qui incrémente un numéro de vol dans Compagnie. 
 
-Problème : devoir faire ` nomVol.mise_a_jour ` à chaque nouveau vol
 ```java
-Vol b = new Vol(depart2, arrive2);
-b.mise_a_jour();
+public int get_id(){
+	return this.idvol++;
+}
 ```
 
 ### Agrégation compagnie - vol 
@@ -84,3 +92,15 @@ public class Compagnie{
 ```
 
 La compagnie va ensuite créer le vol.
+
+Compagnie va utiliser des seters fonctionnant par couples implémenter dans Vol. verif() va vérifier si les données entrées sont bonnes tandis que print_all affiches toutes les données.
+```java
+public void creer_vol(Aeroport aeroport1, ZonedDateTime date1, Aeroport aeroport2, ZonedDateTime date2){
+		Vol v = new Vol(this.nom,this.get_id());
+		v.de(aeroport1, date1);
+		v.vers(aeroport2, date2);
+		this.vols.add(v);
+		v.verif();
+		v.print_all();
+	}
+``` 

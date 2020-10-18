@@ -16,13 +16,13 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 
 - [x] Implémentation de la durée 
 
-- [x] ID de vol unique (en cours)
+- [x] ID de vol unique 
 
 - [x] Relier la compagnie au vol 
 
 - [X] Relier l'aéroport au vol
 
-- [ ] Relier la ville aux aéroports
+- [ ] Relier la ville aux aéroports (en cours)
 
 - [ ] Gérer les escales
 

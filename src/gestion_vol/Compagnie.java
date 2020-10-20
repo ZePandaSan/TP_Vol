@@ -19,7 +19,14 @@ public class Compagnie{
 		v.vers(aeroport2, date2);
 		this.vols.add(v);
 		v.verif();
-		v.print_all();
+	}
+
+	public void add_escale(Escale e, int num){
+		for(Vol v : vols){
+			if (v.get_id()==num){
+				v.escales.add(e);
+			}
+		}
 	}
 
 	public int get_id(){
@@ -28,5 +35,12 @@ public class Compagnie{
 
 	public List<Vol> get_vols(){
 		return vols;
+	}
+
+	public void print_all(){
+		for (Vol v : vols){
+			v.print_all();
+			System.out.println("-----------------------------------------------------------------");
+		}
 	}
 }

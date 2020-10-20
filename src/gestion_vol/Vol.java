@@ -13,7 +13,7 @@ public class Vol {
 	private ZonedDateTime date_arrivee;
 	private Aeroport depart;
 	private Aeroport arrivee;
-	private ArrayList <Escale> escales = new ArrayList<Escale>();
+	public ArrayList <Escale> escales = new ArrayList<Escale>();
 
 	public Vol(String compagnie, int id){
 		this.numero=id;
@@ -37,6 +37,7 @@ public class Vol {
 		this.arrivee=aeroport2;
 		this.date_arrivee=date2;
 	}
+
 	public String get_Duree(){ 
 		String duree=Duration.between(this.date_depart, this.date_arrivee).toString();
 		duree=(duree == null) ? null : duree.replaceAll("PT", "");
@@ -48,6 +49,10 @@ public class Vol {
 
 	public void mise_a_jour(){
 		this.numero++;
+	}
+
+	public int get_id(){
+		return this.numero;
 	}
 
 	public void verif(){
@@ -73,6 +78,9 @@ public class Vol {
 		System.out.println("Arrival : " + format.format(date_arrivee) + " " + date_arrivee.getZone() + " a "
 				+ this.arrivee.get_nom() + "(" + this.arrivee.get_nom_ville()+")");
 		System.out.println("Duration : " + this.get_Duree());
+		for (Escale e : escales){
+			e.print_all();
+		}
 	}
 
 	

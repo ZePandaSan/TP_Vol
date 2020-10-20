@@ -4,10 +4,6 @@
 
 Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run` 
 
-## Avancement
-
-![avancement](UML_avancement.png)
-
 ## A faire
 
 - [x] Implémentation les class et leurs constructeurs
@@ -24,9 +20,9 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 
 - [x] Relier la ville aux aéroports 
 
-- [ ] Gérer les escales (en cours)
+- [x] Gérer les escales
 
-- [ ] Package rservation 
+- [ ] Package rservation (en cours)
 
 - [ ] Relier Vol à Réservation
 
@@ -103,7 +99,7 @@ public class Compagnie{
 
 La compagnie va ensuite créer le vol.
 
-Compagnie va utiliser des seters fonctionnant par couples implémenter dans Vol. verif() va vérifier si les données entrées sont bonnes tandis que print_all affiches toutes les données.
+Compagnie va utiliser des seters fonctionnant par couples implémenter dans Vol. `verif()` va vérifier si les données entrées sont bonnes.
 ```java
 public void creer_vol(Aeroport aeroport1, ZonedDateTime date1, Aeroport aeroport2, ZonedDateTime date2){
 		Vol v = new Vol(this.nom,this.get_id());
@@ -111,7 +107,6 @@ public void creer_vol(Aeroport aeroport1, ZonedDateTime date1, Aeroport aeroport
 		v.vers(aeroport2, date2);
 		this.vols.add(v);
 		v.verif();
-		v.print_all();
 	}
 ``` 
 
@@ -128,4 +123,17 @@ public class Aeroport {
         this.ville=ville;
         this.ville.add_aeroport(this);
 	}
-```
+``` 
+
+### Gestions des escales
+L'escale va être ajouter par la compagnie : 
+```java
+	public void add_escale(Escale e, int num){
+		for(Vol v : vols){
+			if (v.get_id()==num){
+				v.escales.add(e);
+			}
+		}
+	}
+``` 
+Ensuite Vol va pouvoir afficher toute(s) se(s) escale(s). 

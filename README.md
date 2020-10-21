@@ -56,7 +56,7 @@ public void verif(){
 	if (this.depart.equals(this.arrivee)){
 		throw new IllegalArgumentException("The place of arrival cannot be the same as the place of departure");
 	}
-	if(this.depart.dessert.contains(this.arrivee.get_ville())){
+	if(!this.depart.dessert.contains(this.arrivee.get_ville())){
 		throw new IllegalArgumentException("This airport does not serve the city entrance");
 		}
 	}

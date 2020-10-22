@@ -27,6 +27,7 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 - [ ] Relier Vol à Réservation
 
 - [ ] Implémenter test unitaire
+- [ ] Faire le diagramme UML 
 
 ## Problèmes rencontrés
 

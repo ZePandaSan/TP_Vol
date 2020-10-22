@@ -22,12 +22,13 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 
 - [x] Gérer les escales
 
-- [ ] Package rservation (en cours)
+- [x] Lier le client à la reservation 
+
+- [ ] Lier la réservation au passager 
 
 - [ ] Relier Vol à Réservation
 
 - [ ] Implémenter test unitaire
-- [ ] Faire le diagramme UML 
 
 ## Problèmes rencontrés
 
@@ -57,7 +58,7 @@ public void verif(){
 	if (this.depart.equals(this.arrivee)){
 		throw new IllegalArgumentException("The place of arrival cannot be the same as the place of departure");
 	}
-	if(!this.depart.dessert.contains(this.arrivee.get_ville())){
+	if(this.depart.dessert.contains(this.arrivee.get_ville())){
 		throw new IllegalArgumentException("This airport does not serve the city entrance");
 		}
 	}
@@ -137,4 +138,4 @@ L'escale va être ajouter par la compagnie :
 		}
 	}
 ``` 
-Ensuite Vol va pouvoir afficher toute ses escales. 
+Ensuite Vol va pouvoir afficher toute(s) se(s) escale(s). 

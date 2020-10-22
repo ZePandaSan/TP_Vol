@@ -1,15 +1,32 @@
 package reservation;
 
+import java.time.ZonedDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import gestion_vol.Vol;
+
 public class Client {
 	private String nom;
-	private String reference;
-	private String paiement;
+	private int paiement=1;
 	private String contact;
+	private List<Reservation> reference = new ArrayList<Reservation>();
 
-	public Client(String n, String ref, String paiement, String contact){
+	public Client(String n){
 		this.nom = n;
-		this.reference = ref;
-		this.paiement = paiement;
-		this.contact = contact;
+	}
+
+	public void creer_reservation(ZonedDateTime date, Client client, int vol){
+		Reservation r = new Reservation(this.get_id(), date, this, vol);
+		this.reference.add(r);
+		r.print_all();
+	}
+
+	public int get_id(){
+		return this.paiement++;
+	}
+
+	public String get_nom(){
+		return this.nom;
 	}
 }

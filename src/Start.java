@@ -7,19 +7,19 @@ import gestion_vol.Aeroport;
 import gestion_vol.Compagnie;
 import gestion_vol.Escale;
 import gestion_vol.Ville;
+import reservation.Client;
 
-
-public class Start{
-	public static void main(String[] args){
+public class Start {
+	public static void main(String[] args) {
 		Compagnie airFranceCompagnie = new Compagnie("Air France");
 		Compagnie lufthansaCompagnie = new Compagnie("Luftensa");
-		//----------------------------------------------------------------------------------
+		// ----------------------------------------------------------------------------------
 		ZoneId fuseauParis = ZoneId.of("Europe/Paris");
-		//----------------------------------------------------------------------------------
+		// ----------------------------------------------------------------------------------
 		Ville parisVille = new Ville("Paris");
 		Ville barceloneVille = new Ville("Barcelone");
 		Ville francfortVille = new Ville("Francfort");
-		//----------------------------------------------------------------------------------
+		// ----------------------------------------------------------------------------------
 		Aeroport cdgAeroport = new Aeroport("Charles de Gaules", parisVille);
 		cdgAeroport.add_destination(barceloneVille);
 		cdgAeroport.add_destination(francfortVille);
@@ -29,34 +29,38 @@ public class Start{
 		bepAeroport.add_destination(parisVille);
 		Aeroport francfortAeroport = new Aeroport("Francfort-Hahn", francfortVille);
 		francfortAeroport.add_destination(barceloneVille);
-		//----------------------------------------------------------------------------------
-		
-		//----------------------------------------------------------------------------------
+		// ----------------------------------------------------------------------------------
+
+		// ----------------------------------------------------------------------------------
 		LocalDateTime dep = LocalDateTime.of(2020, Month.OCTOBER, 21, 20, 00);
 		LocalDateTime arr = LocalDateTime.of(2020, Month.OCTOBER, 21, 23, 00);
 		LocalDateTime escd1 = LocalDateTime.of(2020, Month.OCTOBER, 21, 21, 00);
 		LocalDateTime escd2 = LocalDateTime.of(2020, Month.OCTOBER, 21, 22, 00);
 		LocalDateTime dep2 = LocalDateTime.of(2020, Month.OCTOBER, 21, 23, 00);
 		LocalDateTime arr2 = LocalDateTime.of(2020, Month.OCTOBER, 22, 02, 00);
-		//----------------------------------------------------------------------------------
+		// ----------------------------------------------------------------------------------
 		ZonedDateTime heure_depart = dep.atZone(fuseauParis);
 		ZonedDateTime heure_arrive = arr.atZone(fuseauParis);
 		ZonedDateTime depart_escale = escd1.atZone(fuseauParis);
 		ZonedDateTime arrivee_escale = escd2.atZone(fuseauParis);
 		ZonedDateTime heure_depart2 = dep2.atZone(fuseauParis);
 		ZonedDateTime heure_arrive2 = arr2.atZone(fuseauParis);
-		//-----------------------------------------------------------------------------------
-		Escale francfortEscale = new Escale(depart_escale, arrivee_escale, francfortAeroport); 
-		//-----------------------------------------------------------------------------------
+		// -----------------------------------------------------------------------------------
+		Escale francfortEscale = new Escale(depart_escale, arrivee_escale, francfortAeroport);
+		// -----------------------------------------------------------------------------------
 		airFranceCompagnie.creer_vol(cdgAeroport, heure_depart, bepAeroport, heure_arrive);
 		airFranceCompagnie.add_escale(francfortEscale, 1);
 		airFranceCompagnie.creer_vol(bepAeroport, heure_depart2, orlyAeroport, heure_arrive2);
 		lufthansaCompagnie.creer_vol(francfortAeroport, heure_depart, bepAeroport, heure_arrive);
-		//----------------------------------------------------------------------------------
+		// ----------------------------------------------------------------------------------
 		airFranceCompagnie.print_all();
 		lufthansaCompagnie.print_all();
+
+
+		Client moi = new Client("Wassim");
+		moi.creer_reservation(heure_depart, moi, 1);
 		
+
 	}
 
-	
 }

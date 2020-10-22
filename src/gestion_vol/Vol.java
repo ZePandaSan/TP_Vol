@@ -55,6 +55,10 @@ public class Vol {
 		return this.numero;
 	}
 
+	public String get_compagnie(){
+		return this.id_compagnie;
+	}
+
 	public void verif(){
 		if (this.date_arrivee.isBefore(this.date_depart)){
 			throw new IllegalArgumentException("Arrival cannot be prior to departure");

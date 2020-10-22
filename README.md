@@ -137,4 +137,4 @@ L'escale va être ajouter par la compagnie :
 		}
 	}
 ``` 
-Ensuite Vol va pouvoir afficher toute(s) se(s) escale(s). 
+Ensuite Vol va pouvoir afficher toute ses escales. 

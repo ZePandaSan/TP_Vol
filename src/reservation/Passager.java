@@ -6,4 +6,8 @@ public class Passager {
 	public Passager(String n){
 		this.nom = n;
 	}
+
+	public String get_nom(){
+		return this.nom;
+	}
 }

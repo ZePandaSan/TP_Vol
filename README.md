@@ -24,11 +24,13 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 
 - [x] Lier le client à la reservation 
 
-- [ ] Lier la réservation au passager 
+- [x] Lier la réservation au passager 
 
 - [ ] Relier Vol à Réservation
 
-- [ ] Implémenter test unitaire
+- [ ] Faire l'UML 
+
+- [ ] Implémenter test unitaire 
 
 ## Problèmes rencontrés
 
@@ -139,3 +141,13 @@ L'escale va être ajouter par la compagnie :
 	}
 ``` 
 Ensuite Vol va pouvoir afficher toute(s) se(s) escale(s). 
+
+### Client - Réservation 
+Client agit comme Compagnie dans l'autre package, il va avoir une liste de réservation et créer des réservations grâce `creer_reservation()`
+```java 
+public void creer_reservation(ZonedDateTime date, Client client, int vol, Passager passager){
+		Reservation r = new Reservation(this.get_id(), date, this, vol, passager);
+		this.reference.add(r);
+		r.print_all();
+	}
+``` 

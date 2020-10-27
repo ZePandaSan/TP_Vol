@@ -8,6 +8,7 @@ import gestion_vol.Compagnie;
 import gestion_vol.Escale;
 import gestion_vol.Ville;
 import reservation.Client;
+import reservation.Passager;
 
 public class Start {
 	public static void main(String[] args) {
@@ -55,10 +56,14 @@ public class Start {
 		// ----------------------------------------------------------------------------------
 		airFranceCompagnie.print_all();
 		lufthansaCompagnie.print_all();
-
-
+		// -----------------------------------------------------------------------------------
 		Client moi = new Client("Wassim");
-		moi.creer_reservation(heure_depart, moi, 1);
+		// -----------------------------------------------------------------------------------
+		Passager moi_meme = new Passager ("Wassim");
+		Passager lui = new Passager ("Auélien");
+		// -----------------------------------------------------------------------------------
+		moi.creer_reservation(heure_depart, moi, 1, moi_meme);
+		moi.creer_reservation(heure_depart, moi, 1, lui);
 		
 
 	}

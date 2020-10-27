@@ -16,7 +16,7 @@ public class Client {
 		this.nom = n;
 	}
 
-	public void creer_reservation(ZonedDateTime date, Client client, int vol, Passager passager){
+	public void creer_reservation(ZonedDateTime date, Client client, Vol vol, Passager passager){
 		Reservation r = new Reservation(this.get_id(), date, this, vol, passager);
 		this.reference.add(r);
 		r.print_all();

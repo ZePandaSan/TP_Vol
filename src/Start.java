@@ -31,8 +31,6 @@ public class Start {
 		Aeroport francfortAeroport = new Aeroport("Francfort-Hahn", francfortVille);
 		francfortAeroport.add_destination(barceloneVille);
 		// ----------------------------------------------------------------------------------
-
-		// ----------------------------------------------------------------------------------
 		LocalDateTime dep = LocalDateTime.of(2020, Month.OCTOBER, 21, 20, 00);
 		LocalDateTime arr = LocalDateTime.of(2020, Month.OCTOBER, 21, 23, 00);
 		LocalDateTime escd1 = LocalDateTime.of(2020, Month.OCTOBER, 21, 21, 00);
@@ -47,23 +45,23 @@ public class Start {
 		ZonedDateTime heure_depart2 = dep2.atZone(fuseauParis);
 		ZonedDateTime heure_arrive2 = arr2.atZone(fuseauParis);
 		// -----------------------------------------------------------------------------------
-		Escale francfortEscale = new Escale(depart_escale, arrivee_escale, francfortAeroport);
-		// -----------------------------------------------------------------------------------
 		airFranceCompagnie.creer_vol(cdgAeroport, heure_depart, bepAeroport, heure_arrive);
-		airFranceCompagnie.add_escale(francfortEscale, 1);
 		airFranceCompagnie.creer_vol(bepAeroport, heure_depart2, orlyAeroport, heure_arrive2);
 		lufthansaCompagnie.creer_vol(francfortAeroport, heure_depart, bepAeroport, heure_arrive);
-		// ----------------------------------------------------------------------------------
-		airFranceCompagnie.print_all();
-		lufthansaCompagnie.print_all();
+		// -----------------------------------------------------------------------------------
+		Escale francfortEscale = new Escale(arrivee_escale, depart_escale, francfortAeroport, airFranceCompagnie.get_vol(1));
+		airFranceCompagnie.add_escale(francfortEscale, 1);
 		// -----------------------------------------------------------------------------------
 		Client moi = new Client("Wassim");
 		// -----------------------------------------------------------------------------------
 		Passager moi_meme = new Passager ("Wassim");
 		Passager lui = new Passager ("Auélien");
 		// -----------------------------------------------------------------------------------
-		moi.creer_reservation(heure_depart, moi, 1, moi_meme);
-		moi.creer_reservation(heure_depart, moi, 1, lui);
+		moi.creer_reservation(heure_depart, moi, airFranceCompagnie.get_vol(1), moi_meme);
+		moi.creer_reservation(heure_depart, moi, airFranceCompagnie.get_vol(1), lui);
+		// -----------------------------------------------------------------------------------
+		airFranceCompagnie.print_all();
+		lufthansaCompagnie.print_all();
 		
 
 	}

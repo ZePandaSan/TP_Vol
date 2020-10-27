@@ -5,27 +5,25 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+import reservation.Reservation;
+
 
 public class Vol {
 	private int numero;
 	private String id_compagnie;
-	private ZonedDateTime date_depart;
-	private ZonedDateTime date_arrivee;
+	public ZonedDateTime date_depart;
+	public ZonedDateTime date_arrivee;
 	private Aeroport depart;
 	private Aeroport arrivee;
 	public ArrayList <Escale> escales = new ArrayList<Escale>();
+	public ArrayList <Reservation> reservation = new ArrayList<Reservation>();
 
 	public Vol(String compagnie, int id){
 		this.numero=id;
 		this.id_compagnie=compagnie;
 	}
-
-	private void ouvrir(){
-
-	}
-
-	private void fermer(){
-
+	public Vol(){
+		
 	}
 
 	public void de(Aeroport aeroport1, ZonedDateTime date1){
@@ -36,6 +34,10 @@ public class Vol {
 	public void vers(Aeroport aeroport2, ZonedDateTime date2){
 		this.arrivee=aeroport2;
 		this.date_arrivee=date2;
+	}
+
+	public void add_reservation(Reservation r){
+		reservation.add(r);
 	}
 
 	public String get_Duree(){ 
@@ -59,6 +61,18 @@ public class Vol {
 		return this.id_compagnie;
 	}
 
+	public String get_vol(){
+		return this.id_compagnie + " " + this.numero;
+	}
+
+	public int nb_passager(){
+		int i=0;
+		for(Reservation r : reservation){
+			i++;
+		}
+		return i;
+	}
+
 	public void verif(){
 		if (this.date_arrivee.isBefore(this.date_depart)){
 			throw new IllegalArgumentException("Arrival cannot be prior to departure");
@@ -78,6 +92,7 @@ public class Vol {
 		DateTimeFormatter format = DateTimeFormatter.ofPattern("HH:mm, dd MMM yyyy");
 		System.out.println("Flight id : " + this.id_compagnie +" "+ this.numero);
 		//System.out.println("Time zone : " + paris);
+		System.out.println("Nombre de passager : "+this.nb_passager());
 		System.out.println("Departure : " + format.format(date_depart) + " " + date_depart.getZone()+" a "+this.depart.get_nom()+"("+this.depart.get_nom_ville()+")");
 		System.out.println("Arrival : " + format.format(date_arrivee) + " " + date_arrivee.getZone() + " a "
 				+ this.arrivee.get_nom() + "(" + this.arrivee.get_nom_ville()+")");

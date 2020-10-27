@@ -26,7 +26,7 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 
 - [x] Lier la réservation au passager 
 
-- [ ] Relier Vol à Réservation
+- [x] Relier Vol à Réservation
 
 - [ ] Faire l'UML 
 
@@ -44,6 +44,7 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 
 Les exceptions sont gérer dans la méthode verif().
 
+#### Vol
 - [X] Date d'arrivée antérieure à celle de départ
 - [X] Date d'arrivée égal à celle d'arrivée
 - [x] Aeroport de départ est le même que celui d'arrivée
@@ -65,7 +66,32 @@ public void verif(){
 		}
 	}
 ```
-
+#### Escale 
+- [x] Le vol arrive à l'escale après le départ de l'escale
+- [x] Le vol arrive à l'escale avant le départ
+- [x] Le vol part de l'escale après l'arrivée  
+```java
+public void verif(){
+		if (this.date_arrivee.isAfter(this.date_depart)){
+			throw new IllegalArgumentException("The flight cannot arrive after its departure");
+		}
+		if (this.date_arrivee.isBefore(this.vol.date_depart)){
+			throw new IllegalArgumentException("The flight cannot arrive at the stopover before taking off");
+		}
+		if (this.date_depart.isAfter(this.vol.date_arrivee)){
+			throw new IllegalArgumentException("The flight cannot leave the stopover after landing");
+		}
+	}
+```
+#### Réservation
+- [x] La réservation se fait après le décollage 
+```java 
+public void verif(){
+		if (this.date.isAfter(this.vol.date_depart)){
+			throw new IllegalArgumentException("The flight is already gone!");
+		}
+	}
+``` 
 ### Implémentation de la durée
 
 Utilisation du type `duration` qui prend en argument les deux ZonedDateTime. 

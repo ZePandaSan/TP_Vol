@@ -4,6 +4,42 @@
 
 Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run` 
 
+## Sortie 
+```text
+Wassim SAIDANE - Aurélien Authier
+------------------------------------------------------------
+Réservation n° 1
+Client : Wassim
+Passager : Wassim
+Vol : Air France 1
+Date : 20:00, 21 oct. 2020
+-----------------------------------------------------------------
+Réservation n° 2
+Client : Wassim
+Passager : Aurélien
+Vol : Air France 1
+Date : 20:00, 21 oct. 2020
+-----------------------------------------------------------------
+Flight id : Air France 1
+Nombre de passager : 2
+Departure : 20:00, 21 oct. 2020 Europe/Paris a Charles de Gaules(Paris)
+Arrival : 23:00, 21 oct. 2020 Europe/Paris a Barcelone-El Prat(Barcelone)
+Duration : 3H
+Stopover : Francfort-Hahn(Francfort) from 21:00, 21 oct. 2020 to 22:00, 21 oct. 2020(1H)
+-----------------------------------------------------------------
+Flight id : Air France 2
+Nombre de passager : 0
+Departure : 23:00, 21 oct. 2020 Europe/Paris a Barcelone-El Prat(Barcelone)
+Arrival : 02:00, 22 oct. 2020 Europe/Paris a Orly(Paris)
+Duration : 3H
+-----------------------------------------------------------------
+Flight id : Luftensa 1
+Nombre de passager : 0
+Departure : 20:00, 21 oct. 2020 Europe/Paris a Francfort-Hahn(Francfort)
+Arrival : 23:00, 21 oct. 2020 Europe/Paris a Barcelone-El Prat(Barcelone)
+Duration : 3H
+-----------------------------------------------------------------
+```
 ## UML 
 ![UML](UML.png)
 

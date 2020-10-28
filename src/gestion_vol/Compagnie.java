@@ -43,9 +43,6 @@ public class Compagnie{
 		return temp;
 	}
 	
-	public List<Vol> get_vols(){
-		return vols;
-	}
 
 	public void print_all(){
 		for (Vol v : vols){

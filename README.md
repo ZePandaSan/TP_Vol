@@ -4,6 +4,9 @@
 
 Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run` 
 
+## UML 
+![UML](UML.png)
+
 ## A faire
 
 - [x] Implémentation les class et leurs constructeurs
@@ -28,9 +31,7 @@ Se placer à la racine puis faire : `./gradlew build` puis `./gradlew run`
 
 - [x] Relier Vol à Réservation
 
-- [ ] Faire l'UML 
-
-- [ ] Implémenter test unitaire 
+- [x] Faire l'UML  
 
 ## Problèmes rencontrés
 

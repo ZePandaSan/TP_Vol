@@ -1,3 +1,5 @@
+//Wassim SAIDANE - Aurélien Authier
+
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.ZoneId;
@@ -12,6 +14,9 @@ import reservation.Passager;
 
 public class Start {
 	public static void main(String[] args) {
+		System.out.println("Wassim SAIDANE - Aurélien Authier");
+		System.out.println("------------------------------------------------------------");
+		//-----------------------------------------------------------------------------------
 		Compagnie airFranceCompagnie = new Compagnie("Air France");
 		Compagnie lufthansaCompagnie = new Compagnie("Luftensa");
 		// ----------------------------------------------------------------------------------
@@ -55,7 +60,7 @@ public class Start {
 		Client moi = new Client("Wassim");
 		// -----------------------------------------------------------------------------------
 		Passager moi_meme = new Passager ("Wassim");
-		Passager lui = new Passager ("Auélien");
+		Passager lui = new Passager ("Aurélien");
 		// -----------------------------------------------------------------------------------
 		moi.creer_reservation(heure_depart, moi, airFranceCompagnie.get_vol(1), moi_meme);
 		moi.creer_reservation(heure_depart, moi, airFranceCompagnie.get_vol(1), lui);

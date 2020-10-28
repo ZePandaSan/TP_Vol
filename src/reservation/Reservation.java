@@ -22,17 +22,9 @@ public class Reservation {
 		this.verif();
 	}
 
-	public void confirmer(){
-
-	}
-
-	public void annuler(){
-		
-	}
-
 	public void verif(){
 		if (this.date.isAfter(this.vol.date_depart)){
-			throw new IllegalAccessException("The flight is already gone!");
+			throw new IllegalArgumentException("The flight is already gone!");
 		}
 	}
 

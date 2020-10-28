@@ -9,7 +9,6 @@ import gestion_vol.Vol;
 public class Client {
 	private String nom;
 	private int paiement=1;
-	private String contact;
 	private List<Reservation> reference = new ArrayList<Reservation>();
 
 	public Client(String n){
